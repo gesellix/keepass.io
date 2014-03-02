@@ -1,0 +1,27 @@
+{
+    "name": "keepass.io",
+    "description": "KeePass database reader and writer in NodeJS",
+    "keywords": [
+        "keepass",
+        "database",
+        "password",
+        "reader",
+        "writer",
+        "kdb",
+        "kdb4",
+        "kdbx",
+        "password",
+        "safe",
+        "secure",
+        "manager"
+    ],
+    "version": "1.0.0",
+    "author": "Pascal Mathis <dev@snapserv.net> (https://www.snapserv.net)",
+    "main": "./lib/index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NeoXiD/keepass.io"
+    },
+    "dependencies": {}
+}
