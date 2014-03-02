@@ -17,11 +17,14 @@
     ],
     "version": "1.0.0",
     "author": "Pascal Mathis <dev@snapserv.net> (https://www.snapserv.net)",
-    "main": "./lib/index.js",
+    "main": "./lib/KeePassIO.js",
     "scripts": {},
     "repository": {
         "type": "git",
         "url": "https://github.com/NeoXiD/keepass.io"
     },
-    "dependencies": {}
+    "dependencies": {
+        "dejavu": "0.4.4",
+        "jspack": "0.0.3"
+    }
 }
