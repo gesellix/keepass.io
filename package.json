@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "dejavu": "0.4.4",
-        "jspack": "0.0.3"
+        "jspack": "0.0.3",
+        "async": "0.2.10"
     }
 }
