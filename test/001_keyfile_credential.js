@@ -1,10 +1,6 @@
 var should = require('should');
+var helpers = require('./000_test_helpers')
 var kpio = require('../lib');
-var path = require('path');
-
-function abspath(dirPath) {
-    return path.join(__dirname, 'data', dirPath);
-}
 
 describe('Instantiating a KeyfileCredential', function() {
     describe('by providing an inexistant keyfile', function() {
@@ -18,7 +14,7 @@ describe('Instantiating a KeyfileCredential', function() {
     describe('by providing a binary file', function() {
         var keyfile;
         before(function() {
-            keyfile = new kpio.KeyfileCredential(abspath('keyfile.bin'));
+            keyfile = new kpio.KeyfileCredential(helpers.abspath('keyfile.bin'));
         });        
 
         it('should result in isBinary() === true', function() {
@@ -38,7 +34,7 @@ describe('Instantiating a KeyfileCredential', function() {
     describe('by providing a generated keyfile', function() {
         var keyfile;
         before(function() {
-            keyfile = new kpio.KeyfileCredential(abspath('example.key'));
+            keyfile = new kpio.KeyfileCredential(helpers.abspath('example.key'));
         });
         
         it('should result in isBinary() === false', function() {
