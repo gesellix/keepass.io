@@ -45,7 +45,7 @@ describe('Instantiating a KeyfileCredential', function() {
             keyfile.getFinalKey().should.have.property('$name', 'SecureBuffer');
         });
         
-        it('and calling drop() should return null when calling getFinalKey()', function() {
+        it('and calling drop() should return null when later calling getFinalKey()', function() {
             keyfile.drop();
             should(keyfile.getFinalKey()).be.exactly(null);
         });
