@@ -24,7 +24,7 @@ describe('Instantiating a PasswordCredential', function() {
                 new kpio.PasswordCredential(new Buffer());
             }).should.throw();
         });
-    })
+    });
     
     describe('by providing a random string', function() {
         var password;
