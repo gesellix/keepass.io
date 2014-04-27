@@ -5,6 +5,7 @@ var kpio = require('../lib');
 
 var PARENT_GROUP_UUID = 'Pl5s4tAbm0eiyg1aOOr0/A==';
 var TEST_ENTRY_UUID = 'b7h30xv9PkGEL1Jt5SQc0A==';
+var DELETED_TEST_ENTRY_UUID = 'NmWWy41MG0WYp6yIGQVUvA==';
 
 describe('Opening the example database', function(){
     var api;
@@ -137,6 +138,27 @@ describe('Opening the example database', function(){
                     iconId: 29
                 });
             });
+        });
+    });
+    
+    describe('#getUuidManager()', function() {
+        var uuidManager;
+        
+        before(function() {
+            uuidManager = api.getUuidManager();
+        });
+        
+        it('a new generated UUID should be marked as unique', function(){
+            uuidManager.isUnique('unique-uuid-which-will-never-be-generated').should.be.ok;
+        });
+        it('the parent group UUID should be marked as used', function() {
+            uuidManager.isUsed(PARENT_GROUP_UUID).should.be.ok;
+        });
+        it('the test entry UUID should be marked as used', function() {
+            uuidManager.isUsed(TEST_ENTRY_UUID).should.be.ok;
+        });
+        it('the deleted test entry UUID should be marked as deleted', function() {
+            uuidManager.isDeleted(DELETED_TEST_ENTRY_UUID).should.be.ok;
         });
     });
 });
