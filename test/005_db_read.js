@@ -102,6 +102,20 @@ describe('Opening the example database', function(){
                     'URL': '',
                     'Notes': ''
                 });
+            });
+            
+            it('should have exactly one history entry', function() {
+                entry.history().should.have.length(1);
+            });
+            
+            it('the strings of the first history entry should match predefined values', function() {
+                entry.history()[0].strings().should.have.properties({
+                    'Title': 'Example Entry',
+                    'UserName': 'matrix',
+                    'Password': 'uuHZnGBl99TmQQhjhH-0hz9v9sQ2Pcf3npc7jF8r',
+                    'URL': '',
+                    'Notes': ''
+                });
             })
         });
         
