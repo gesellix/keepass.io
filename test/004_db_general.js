@@ -27,26 +27,26 @@ describe('Opening a database', function() {
     
     describe('by providing invalid credentials', function() {
        it('should throw an error', function(done) {
-           var db = new kpio.KeePassIO();
-           db.dropAllCredentials();
-           db.addCredential(new kpio.PasswordCredential('insert-coin'));
-           db.loadDatabase(databasePath)
-            .on('ready', function() {
-                done(new Error('Expected an error.'));
-            })
-            .on('error', function(err) {
-                done();
-            });
+            var db = new kpio.KeePassIO();
+            db.dropAllCredentials();
+            db.addCredential(new kpio.PasswordCredential('insert-coin'));
+            db.loadDatabase(databasePath)
+                .on('ready', function() {
+                    done(new Error('Expected an error.'));
+                })
+                .on('error', function(err) {
+                    done();
+                });
        });
     });
     
     describe('by providing valid credentials', function() {
         it('should not throw any errors', function(done) {
-             var db = new kpio.KeePassIO();
-               db.dropAllCredentials();
-               db.addCredential(new kpio.PasswordCredential('nebuchadnezzar'));
-               db.addCredential(new kpio.KeyfileCredential(keyfilePath));
-               db.loadDatabase(databasePath)
+            var db = new kpio.KeePassIO();
+            db.dropAllCredentials();
+            db.addCredential(new kpio.PasswordCredential('nebuchadnezzar'));
+            db.addCredential(new kpio.KeyfileCredential(keyfilePath));
+            db.loadDatabase(databasePath)
                 .on('ready', done)
                 .on('error', done);
         });
